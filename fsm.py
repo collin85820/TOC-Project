@@ -58,12 +58,12 @@ class TocMachine(GraphMachine):
                            ['Reference'],
                            ['Other']]
         reply = telegram.ReplyKeyboardMarkup(custom_keyboard)
-        update.message.reply_text(text = "Which item you want to find?",
+        update.message.reply_text(text = "Which information do you want to find?",
                                   reply_markup=reply)
 
     def on_exit_search(self, update):
         reply = telegram.ReplyKeyboardRemove()
-        update.message.reply_text(text="Just another question",
+        update.message.reply_text(text="OK,just another question.",
                                   reply_markup=reply)
 
     def works(self, update):
@@ -74,12 +74,12 @@ class TocMachine(GraphMachine):
         custom_keyboard = [['Music'],
                            ['Drama']]
         reply = telegram.ReplyKeyboardMarkup(custom_keyboard)
-        update.message.reply_text(text = "What kind of work you want to find?",
+        update.message.reply_text(text = "What kind of work do you want to find?",
                                   reply_markup=reply)
 
     def on_exit_works(self, update):
         reply = telegram.ReplyKeyboardRemove()
-        update.message.reply_text(text = "Start Search!",
+        update.message.reply_text(text = "Searching!",
                                   reply_markup=reply)
     def other(self, update):
         text = update.message.text
@@ -89,12 +89,12 @@ class TocMachine(GraphMachine):
         custom_keyboard = [['YoutubeVEVO'],
                            ['WIKI']]
         reply = telegram.ReplyKeyboardMarkup(custom_keyboard)
-        update.message.reply_text(text = "What kind of Infornation you want to find?",
+        update.message.reply_text(text = "What kind of item do you want to find?",
                                   reply_markup=reply)
 
     def on_exit_other(self, update):
         reply = telegram.ReplyKeyboardRemove()
-        update.message.reply_text(text = "Start Search!",
+        update.message.reply_text(text = "Searching!",
                                   reply_markup=reply)
 
     def reference(self, update):
@@ -110,7 +110,7 @@ class TocMachine(GraphMachine):
 
     def on_exit_reference(self, update):
         reply = telegram.ReplyKeyboardRemove()
-        update.message.reply_text(text = "Start Search!",
+        update.message.reply_text(text = "Searching!",
                                   reply_markup=reply)
 
     def profile(self, update):
@@ -147,7 +147,7 @@ class TocMachine(GraphMachine):
             update.message.reply_text(output)
             self.go_back(update)
         else:
-            update.message.reply_text("Don't Match,try again!")
+            update.message.reply_text("Doesn't match,try again!")
             self.go_back(update)
 
 
@@ -219,7 +219,7 @@ class TocMachine(GraphMachine):
             update.message.reply_text(output)
             self.go_back(update)
         else:
-            update.message.reply_text("Don't Match,try again!")
+            update.message.reply_text("Doesn't match,try again!")
             self.go_back(update)
 
     def fb(self, update):
