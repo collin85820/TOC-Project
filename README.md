@@ -28,11 +28,16 @@ python3 app.py
 The initial state is set to `user`.
 
 Note:It can only input Foreign Article
+This is a machine to let you search the article's information which you input.
+First you input an name without chinese,then click the option of the information which you want do search.
+Then when the searching is finished. It will give a chat to you.
 
-Every time `user` state is triggered to `advance` to another state, it will let you to choose your options to get what you want.
+Then it will let you to input another article again.
+
+Every time `user` state is triggered to `advance` to another state, when finish searching, it will go back to 'article' state to let user input.
 
 * user
-	* Input: The article name you want to search,then follew the option to choose the information.
+	* Input: The article name you want to search,then choose the option to get your information.
 
 
 ## Author
